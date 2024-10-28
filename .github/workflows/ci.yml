@@ -1,7 +1,7 @@
 
 
 on:
-  #push:
+  push:
   pull_request:
 
 jobs:
@@ -22,7 +22,7 @@ jobs:
           pip install -r requirements.txt
   build-and-push-image:
     needs: test
-    if: github.event_name == 'push'
+    if: github.event_name == 'pull_reques'
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
