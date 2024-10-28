@@ -2,9 +2,6 @@
 FROM python:3.9-slim
 
 
-#name: Build Docker image
-  run: docker build -t mohammad1406/capstone-project:latest -f app/Dockerfile .
-
 # Set the working directory in the container
 WORKDIR /app
 
@@ -22,3 +19,4 @@ EXPOSE 5000
 
 # Define the command to run the application
 CMD ["python", "app.py"]
+
