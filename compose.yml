@@ -1,0 +1,31 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - DB_HOST=mysql            # MySQL host, named by its service in this file
+      - DB_USER=user             # MySQL username
+      - DB_PASSWORD=password     # MySQL password
+      - DB_NAME=mydatabase       # MySQL database name
+      - REDIS_HOST=redis         # Redis host, named by its service in this file
+    ports:
+      - "5000:5000"              # Maps port 5000 on the host to port 5000 on the container
+    depends_on:
+      - redis
+      - mysql
+
+  redis:
+    image: "redis:latest"
+    ports:
+      - "6379:6379"              # Maps Redis port 6379
+
+  mysql:
+    image: "mysql:latest"
+    environment:
+      MYSQL_ROOT_PASSWORD: password    # MySQL root password
+      MYSQL_DATABASE: mydatabase       # Database to create
+      MYSQL_USER: user                 # User for MySQL
+      MYSQL_PASSWORD: password         # Password for the MySQL user
+    ports:
+      - "3306:3306"                    # Maps MySQL port 3306
