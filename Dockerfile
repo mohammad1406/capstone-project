@@ -2,7 +2,7 @@
 FROM python:3.9-slim
 
 
-- name: Build Docker image
+#name: Build Docker image
   run: docker build -t mohammad1406/capstone-project:latest -f app/Dockerfile .
 
 # Set the working directory in the container
