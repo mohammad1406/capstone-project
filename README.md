@@ -33,7 +33,7 @@ This application demonstrates basic operations with integration between a relati
 <img width="659" alt="Screen Shot 1446-04-19 at 1 35 19 PM" src="https://github.com/user-attachments/assets/2eb60bbb-0b2a-4d43-aa07-8a2b648032db">
 
 
-Notice that after visiting `/user/<user_id>` the Source shows that data came from Redis:
+NOtice that after visiting `/user/<user_id>` the Source shows that data came from Redis:
 
 <img width="472" alt="Screen Shot 1446-04-19 at 1 42 34 PM" src="https://github.com/user-attachments/assets/8a99c296-fd68-4854-aa04-491f0a7ebc8d">
 
