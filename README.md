@@ -27,7 +27,7 @@ This Flask application serves as a simple web interface for adding users and vie
   - Displays the user’s ID, name, and the source (either Redis or MySQL) where the information was retrieved from.
     
 
-This application demonstrates basic operations with integration between a relational database (MySQL) and an in-memory store (Redis) for faster data retrieval. Bellow is a screenshoot of the Homepage, I'll add a new user:
+THis application demonstrates basic operations with integration between a relational database (MySQL) and an in-memory store (Redis) for faster data retrieval. Bellow is a screenshoot of the Homepage, I'll add a new user:
 
 
 <img width="659" alt="Screen Shot 1446-04-19 at 1 35 19 PM" src="https://github.com/user-attachments/assets/2eb60bbb-0b2a-4d43-aa07-8a2b648032db">
