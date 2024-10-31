@@ -10,7 +10,7 @@ services:
       - DB_NAME=mydatabase       # MySQL database name
       - REDIS_HOST=redis         # Redis host, named by its service in this file
     ports:
-      - "5000:5000"              # Maps port 5000 on the host to port 5000 on the container
+      - "80:5000"              # Maps port 5000 on the host to port 5000 on the container
     depends_on:
       - redis
       - mysql
