@@ -10,7 +10,7 @@ This Flask application serves as a simple web interface for adding users and vie
     - A `/user/<user_id>` route for fetching user information, first checking Redis (cache) and then falling back to MySQL if the data isn't found in the cache.
   - It also contains a function to initialize the MySQL database table for users.
 
-- **requirements.txt**: 
+- ***requirements.txt**: 
   - This file lists the necessary Python packages for the Flask application.
 
 - **test_app.py**: 
