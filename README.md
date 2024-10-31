@@ -14,7 +14,7 @@ This Flask application serves as a simple web interface for adding users and vie
   - This file lists the necessary Python packages for the Flask application.
 
 - **test_app.py**: 
-  - Contains unit test to verify that the Flask application is working correctly.
+  - COntains unit test to verify that the Flask application is working correctly.
   - Tests the home page route (`/`) to ensure it returns a successful response.
   - The test can be run using command: `python test_app.py`
 
