@@ -1,0 +1,43 @@
+name: Deploy image to self-hosted server
+
+on:
+  workflow_run: 
+    workflows: ["CI"]
+    types:
+      - completed    
+
+env:
+  SSH_KEY: ${{ secrets.SSH_KEY }}
+  SSH_USER: ${{ secrets.SSH_USERNAME }}
+  SSH_NODE_1: ${{ secrets.NODE_1 }}
+  SSH_NODE_2: ${{ secrets.NODE_2 }}
+
+jobs:
+  deploy1:
+    runs-on: self-hosted
+    steps:
+      - name: Deploying to server 1
+        run: |
+          echo "${{ secrets.SSH_KEY }}" > keyhttp9.pem
+          chmod 600 keyhttp9.pem
+          ssh -i keyhttp9.pem ${{ secrets.SSH_USERNAME }}@${{ secrets.NODE_1 }} << 'EOF'
+          set -e
+          cd /capstone-project
+          git pull https://github.com/mohammad1406/capstone-project.git
+          docker compose up -d --build
+          rm -f keyhttp9.pem
+          EOF
+  deploy2:
+    runs-on: self-hosted
+    steps:
+      - name: Deploying to server 2
+        run: |
+          echo "${{ secrets.SSH_KEY }}" > keyhttp9.pem
+          chmod 600 keyhttp9.pem
+          ssh -i keyhttp9.pem ${{ secrets.SSH_USERNAME }}@${{ secrets.NODE_2 }} << 'EOF'
+          set -e
+          cd /capstone-project
+          git pull https://github.com/mohammad1406/capstone-project.git
+          docker compose up -d --build
+          rm -f keyhttp9.pem
+          EOF
